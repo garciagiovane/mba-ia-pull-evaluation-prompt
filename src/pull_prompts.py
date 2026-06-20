@@ -9,11 +9,9 @@ Este script:
 SIMPLIFICADO: Usa serialização nativa do LangChain para extrair prompts.
 """
 
-import os
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
-from langchain import hub
 from langsmith import Client
 from utils import save_yaml, check_env_vars, print_section_header
 
@@ -22,14 +20,19 @@ load_dotenv()
 client = Client()
 
 def pull_prompts_from_langsmith():
-    return client.pull_prompt("bug_to_user_story_v1")
-
+    print_section_header("Pulling prompts from LangSmith Prompt Hub...")
+    return client.pull_prompt("leonanluppi/bug_to_user_story_v1")
 
 def main():
     check_env_vars(["LANGSMITH_ENDPOINT", "LANGSMITH_API_KEY", "LANGSMITH_PROJECT"])
     prompt = pull_prompts_from_langsmith()
-    print(prompt)
-
+    root_dir = Path(__file__).resolve().parent.parent
+    prompts_dir = str(root_dir / "prompts" / "bug_to_user_story_v1.yml")
+    saved = save_yaml(prompt, prompts_dir)
+    if saved:
+        print_section_header("Prompt pulled and saved successfully!")
+    else:
+        print_section_header("Failed to save the prompt.")
 
 if __name__ == "__main__":
     sys.exit(main())
