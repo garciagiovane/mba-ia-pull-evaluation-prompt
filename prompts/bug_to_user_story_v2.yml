@@ -97,3 +97,15 @@ bug_to_user_story_v2:
   metadata:
     lc_hub_owner: giovanegarcia
     lc_hub_repo: bug_to_user_story_v2
+    techniques:
+    - persona
+    - few-shot
+    - chain-of-thought
+    - output-format
+    - classification
+  techniques_applied:
+   - persona
+   - few-shot
+   - chain-of-thought
+   - output-format
+   - classification
