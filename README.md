@@ -114,9 +114,13 @@ Critérios de Aceitação:
 
 As primeiras avaliações do prompt otimizado foram executadas no projeto `mba-fullcycle` no LangSmith. Depois que as iterações passaram a apresentar resultados positivos, o fluxo foi migrado para o projeto final `pr-vacant-snorer-67`, usado como evidência consolidada da entrega.
 
-Dashboard público do LangSmith:
+Dataset público no LangSmith:
 
-https://smith.langchain.com/projects/pr-vacant-snorer-67
+https://smith.langchain.com/public/d813892b-d9f1-4d29-9ac3-7348eebada22/d
+
+Experimento público no LangSmith:
+
+https://smith.langchain.com/public/7f05d2e5-7bdf-4e2d-b37e-e3f735b12fa1/d
 
 Prompt publicado no LangSmith Hub:
 
